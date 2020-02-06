@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/Users/devinkellogg/programs/software/workspaceCSCI4830-tech-ex-Kellogg/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+747144625.index
+2766315969.index
+3721093560.index
+3865134358.index
+1525256881.index
+590368883.index

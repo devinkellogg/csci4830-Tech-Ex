@@ -1,0 +1,16 @@
+!SESSION 2020-02-06 14:43:18.495 -----------------------------------------------
+eclipse.buildId=4.12.0.I20190605-1800
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -keyring /Users/devinkellogg/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -data /Users/devinkellogg/programs/software/workspaceCSCI4830-tech-ex-Kellogg -product org.eclipse.epp.package.jee.product -keyring /Users/devinkellogg/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2020-02-06 14:43:21.062
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.egit.core 1 0 2020-02-06 14:43:21.126
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2020-02-06 14:44:32.292
+!MESSAGE Server returned lastModified <= 0 for http://jope.ow2.org/update/jope/content.jar
