@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/SimpleFormSearch")
-public class SimpleFormSearch extends HttpServlet {
+@WebServlet("/search")
+public class OutageSearch extends HttpServlet {
    private static final long serialVersionUID = 1L;
 
-   public SimpleFormSearch() {
+   public OutageSearch() {
       super();
    }
 
@@ -43,13 +43,13 @@ public class SimpleFormSearch extends HttpServlet {
          connection = DBConnection.connection;
 
          if (keyword.isEmpty()) {
-            String selectSQL = "SELECT * FROM myTable";
+            String selectSQL = "SELECT * FROM TechTableKellogg";
             preparedStatement = connection.prepareStatement(selectSQL);
          } else {
-            String selectSQL = "SELECT * FROM myTable WHERE MYUSER LIKE ?";
-            String theUserName = keyword + "%";
+            String selectSQL = "SELECT * FROM TechTableKellogg WHERE DEVICE LIKE ?";
+            String deviceName = keyword + "%";
             preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, theUserName);
+            preparedStatement.setString(1, deviceName);
          }
          ResultSet rs = preparedStatement.executeQuery();
 
@@ -66,7 +66,8 @@ public class SimpleFormSearch extends HttpServlet {
                out.println("Phone: " + phone + "<br>");
             }
          }
-         out.println("<a href=/webproject/simpleFormSearch.html>Search Data</a> <br>");
+         out.println("<a href=webproject-tech-ex-Kellogg/outage_insert.html>Insert Outage</a> <br>");
+         out.println("<a href=webproject-tech-ex-Kellogg/outage_search.html>Search Outage</a> <br>");
          out.println("</body></html>");
          rs.close();
          preparedStatement.close();

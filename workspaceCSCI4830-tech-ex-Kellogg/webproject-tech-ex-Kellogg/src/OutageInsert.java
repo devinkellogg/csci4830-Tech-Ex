@@ -13,29 +13,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/SimpleFormInsert")
-public class SimpleFormInsert extends HttpServlet {
+@WebServlet("/insert")
+public class OutageInsert extends HttpServlet {
    private static final long serialVersionUID = 1L;
 
-   public SimpleFormInsert() {
+   public OutageInsert() {
       super();
    }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      String userName = request.getParameter("userName");
-      String email = request.getParameter("email");
-      String phone = request.getParameter("phone");
+      String device = request.getParameter("device");
+      String outageStatus = request.getParameter("outageStatus");
+      String description = request.getParameter("description");
 
       Connection connection = null;
-      String insertSql = " INSERT INTO myTable (id, MYUSER, EMAIL, PHONE) values (default, ?, ?, ?)";
+      String insertSql = " INSERT INTO TechTableKellogg (id, DEVICE, OUTAGESTATUS, DESCRIPTION) values (default, ?, ?, ?)";
 
       try {
          DBConnection.getDBConnection();
          connection = DBConnection.connection;
          PreparedStatement preparedStmt = connection.prepareStatement(insertSql);
-         preparedStmt.setString(1, userName);
-         preparedStmt.setString(2, email);
-         preparedStmt.setString(3, phone);
+         preparedStmt.setString(1, device);
+         preparedStmt.setString(2, outageStatus);
+         preparedStmt.setString(3, description);
          preparedStmt.execute();
          connection.close();
       } catch (Exception e) {
@@ -54,13 +54,14 @@ public class SimpleFormInsert extends HttpServlet {
             "<h2 align=\"center\">" + title + "</h2>\n" + //
             "<ul>\n" + //
 
-            "  <li><b>User Name</b>: " + userName + "\n" + //
-            "  <li><b>Email</b>: " + email + "\n" + //
-            "  <li><b>Phone</b>: " + phone + "\n" + //
+            "  <li><b>Device</b>: " + device + "\n" + //
+            "  <li><b>Outage Status</b>: " + outageStatus + "\n" + //
+            "  <li><b>Description</b>: " + description + "\n" + //
 
             "</ul>\n");
 
-      out.println("<a href=/webproject/simpleFormSearch.html>Search Data</a> <br>");
+      out.println("<a href=webproject-tech-ex-Kellogg/outage_insert.html>Insert Outage</a> <br>");
+      out.println("<a href=webproject-tech-ex-Kellogg/outage_search.html>Search Outage</a> <br>");
       out.println("</body></html>");
    }
 
