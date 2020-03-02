@@ -55,19 +55,19 @@ public class OutageSearch extends HttpServlet {
 
          while (rs.next()) {
             int id = rs.getInt("id");
-            String userName = rs.getString("myuser").trim();
-            String email = rs.getString("email").trim();
-            String phone = rs.getString("phone").trim();
+            String device = rs.getString("device").trim();
+            String outageStatus = rs.getString("outagestatus").trim();
+            String description = rs.getString("description").trim();
 
-            if (keyword.isEmpty() || userName.contains(keyword)) {
+            if (keyword.isEmpty() || device.contains(keyword)) {
                out.println("ID: " + id + ", ");
-               out.println("User: " + userName + ", ");
-               out.println("Email: " + email + ", ");
-               out.println("Phone: " + phone + "<br>");
+               out.println("Device: " + device + ", ");
+               out.println("Outage Status: " + outageStatus + ", ");
+               out.println("Description: " + description + "<br>");
             }
          }
-         out.println("<a href=webproject-tech-ex-Kellogg/outage_insert.html>Insert Outage</a> <br>");
-         out.println("<a href=webproject-tech-ex-Kellogg/outage_search.html>Search Outage</a> <br>");
+         out.println("<a href=/webproject-tech-ex-Kellogg/outage_insert.html>Insert Outage</a> <br>");
+         out.println("<a href=/webproject-tech-ex-Kellogg/outage_search.html>Search Outage</a> <br>");
          out.println("</body></html>");
          rs.close();
          preparedStatement.close();

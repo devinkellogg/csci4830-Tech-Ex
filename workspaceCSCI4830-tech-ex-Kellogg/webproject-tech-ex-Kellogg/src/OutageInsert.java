@@ -60,8 +60,8 @@ public class OutageInsert extends HttpServlet {
 
             "</ul>\n");
 
-      out.println("<a href=webproject-tech-ex-Kellogg/outage_insert.html>Insert Outage</a> <br>");
-      out.println("<a href=webproject-tech-ex-Kellogg/outage_search.html>Search Outage</a> <br>");
+      out.println("<a href=/webproject-tech-ex-Kellogg/outage_insert.html>Insert Outage</a> <br>");
+      out.println("<a href=/webproject-tech-ex-Kellogg/outage_search.html>Search Outage</a> <br>");
       out.println("</body></html>");
    }
 
